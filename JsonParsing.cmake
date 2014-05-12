@@ -50,6 +50,11 @@ macro (ParseJson jsonFile)
 	if (NOT ( "${ParseJson_ROOT}" STREQUAL ""))
 		set (${ParseJson_ROOT} jsonParsed_${prefix})
 	endif ()
+	
+	CONFIGURE_FILE(
+		${jsonFile}
+		${PROJECT_BINARY_DIR}/json/${prefix}.tmp
+	)
 		
 endmacro ()
 
